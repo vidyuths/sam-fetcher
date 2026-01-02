@@ -1,0 +1,11 @@
+{
+  "name": "sam-fetcher",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "p-retry": "^6.2.0",
+    "undici": "^6.19.8"
+  }
+}

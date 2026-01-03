@@ -89,7 +89,7 @@ app.post("/fetch", async (req, reply) => {
     if (headerToken !== authToken) return reply.code(401).send({ error: "Unauthorized" });
   }
 
-  const { postedFrom, postedTo, setAsides = ["SBA"], limit = 1000 } = req.body || {};
+const { postedFrom, postedTo, setAsides = ["SBA"], limit = 200 } = req.body || {};
   if (!postedFrom || !postedTo) return reply.code(400).send({ error: "postedFrom and postedTo required" });
 
   const items = [];

@@ -67,10 +67,10 @@ async function samSearch({ apiKey, postedFrom, postedTo, setAside, limit, offset
 }
 
 return pRetry(() => samSearch(args), {
-  retries: 10,
+  retries: 5,
   factor: 2,
-  minTimeout: 2000,
-  maxTimeout: 30000,
+  minTimeout: 800,
+  maxTimeout: 8000,
   randomize: true
 });
 

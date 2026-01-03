@@ -66,15 +66,14 @@ async function samSearch({ apiKey, postedFrom, postedTo, setAside, limit, offset
   return body;
 }
 
-async function samSearchWithRetry(args) {
-  return pRetry(() => samSearch(args), {
-    retries: 5,
-    factor: 2,
-    minTimeout: 800,
-    maxTimeout: 8000,
-    randomize: true
-  });
-}
+return pRetry(() => samSearch(args), {
+  retries: 10,
+  factor: 2,
+  minTimeout: 2000,
+  maxTimeout: 30000,
+  randomize: true
+});
+
 
 app.get("/health", async () => ({ ok: true }));
 
